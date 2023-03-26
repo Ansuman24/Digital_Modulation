@@ -1,0 +1,13 @@
+%LPF FIR
+Fpass=150;
+Fstop=200;
+Apass=1;
+Astop=70;
+fs=1e3;
+
+d=designfilt('lowpassfir',....
+  'PassbandFrequency',Fpass,'StopbandFrequency',Fstop,... 
+  'PassbandRipple',Apass,'StopbandAttenuation',Astop,...
+  'DesignMethod','equiripple','SampleRate',fs);
+
+fvtool(d)
